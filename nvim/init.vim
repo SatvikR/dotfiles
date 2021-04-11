@@ -7,7 +7,7 @@
 set noswapfile
 set nu
 
-set guifont=Consolas:h14
+set guifont=Fira\ Code:h12
 " For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
 if (has('nvim'))
   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
@@ -202,7 +202,11 @@ Plug 'exu/pgsql.vim'
 Plug 'preservim/nerdtree' |
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" MUST BE LAST icons
+" Bracket closer
+Plug 'raimondi/delimitmate'
+
+" icons  
+" NOTE: must be last
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -226,3 +230,10 @@ let g:go_highlight_variable_assignments = 1
 
 " Use pgql when you can
 let g:sql_type_default = 'pgsql'
+
+" Tab switching binds
+nnoremap H gT
+nnoremap L gt
+
+" setting sql omni to something random so I can use <C-c> in sql files just something random
+let g:ftplugin_sql_omni_key       = '<C-F8>'
